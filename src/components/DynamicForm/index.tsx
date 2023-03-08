@@ -14,6 +14,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { FormJSON_Type } from "../../FormGenrate/formJSONType";
 import FormComponents from "./FormComponents";
+import { submitLoginFunction } from "../../Utils/onFormSubmit";
 
 interface DynamicFormProps {
   formData: FormJSON_Type;
@@ -23,23 +24,25 @@ const DynamicForm = ({ formData, isReRender }: DynamicFormProps) => {
   const navigate = useNavigate();
   //   const getUserInfo = useSelector((state) => state?.user?.getUserInfo);
   const submitHandle = async (values: any) => {
-    // switch (formData["form-slug"]) {
-    //   case "signup-form-user":
-    //     (await submitSignupFunction(values)) && navigate("/");
-    //     return;
-    //   case "login-form-user":
-    //     (await submitLoginFunction(values)) && navigate("/en");
-    //     return;
-    //   case "user-role-assign-form-dynamic":
-    //     (await submitAssignRoleFunction(values, getUserInfo?.id)) && navigate("/en/userList");
-    //     return;
-    //   case "product-form-dynamic":
-    //     (await submitCreateProductFunction(values)) && navigate("/en/product");
-    //     return;
-    //   case "add-role-form-dynamic":
-    //     (await submitCreateRoleFunction(values)) && navigate("/en/PermissionList");
-    //     return;
-    // }
+    console.log("v::>", values);
+    // alert();
+    switch (formData["form-slug"]) {
+      case "login-form-user":
+        (await submitLoginFunction(values)) && navigate("/");
+        return;
+      //   case "login-form-user":
+      //     (await submitLoginFunction(values)) && navigate("/en");
+      //     return;
+      //   case "user-role-assign-form-dynamic":
+      //     (await submitAssignRoleFunction(values, getUserInfo?.id)) && navigate("/en/userList");
+      //     return;
+      //   case "product-form-dynamic":
+      //     (await submitCreateProductFunction(values)) && navigate("/en/product");
+      //     return;
+      //   case "add-role-form-dynamic":
+      //     (await submitCreateRoleFunction(values)) && navigate("/en/PermissionList");
+      //     return;
+    }
   };
   useEffect(() => {
     console.log("useERKJVBSD,MFBVGM,SADF", formData);

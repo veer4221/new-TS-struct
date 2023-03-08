@@ -5,7 +5,6 @@ import AuthForms from "./pages/AuthForms";
 function App() {
   return (
     <>
-      <h1>hello</h1>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={true || localStorage.getItem("token") ? <Outlet /> : <Navigate to="/en" replace />}>
