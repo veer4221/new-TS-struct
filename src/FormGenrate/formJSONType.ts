@@ -13,6 +13,7 @@ export interface FieldType {
   placeholder: string;
   name: string;
   fildSize: fildSizeType;
+  options?: selectOptionType[] | RadioOptionType;
 }
 export interface FormJSON_Type {
   ["form-slug"]: string;
@@ -52,3 +53,9 @@ export interface FormJSON_Type {
     };
   };
 }
+
+export interface RadioOptionType {
+  label: string;
+  value: string;
+}
+export interface selectOptionType extends RadioOptionType {}

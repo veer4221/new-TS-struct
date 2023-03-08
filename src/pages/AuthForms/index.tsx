@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { loginFormJSON } from "../../FormGenrate";
 import DynamicForm from "../../components/DynamicForm";
-// import "./style.scss";
-// import logo from "../../assets/images/minilogo.png";
-// import DynamicForm from "../../components/DynamicForm";
-// import { loginFormJSON, signupFormJSON } from "../../forms";
+import { useDispatch } from "react-redux";
+import { setProductFormJSONAction } from "../../strore/actions/user.action";
 
 const AuthForms = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [formDataJSON, setFormDataJSON] = useState(loginFormJSON);
+  const dispatch = useDispatch<any>();
   useEffect(() => {
+    dispatch(setProductFormJSONAction(loginFormJSON));
     // if (isLogin) return setFormDataJSON(loginFormJSON);
     // return setFormDataJSON(signupFormJSON);
     console.log("hii", loginFormJSON);

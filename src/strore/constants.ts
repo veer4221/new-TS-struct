@@ -19,3 +19,7 @@ export const userContants = {
   USER_UPDATE_REQUEST: "USER_UPDATE_REQUEST",
   USER_UPDATE_SUCCESS: "USER_UPDATE_SUCCESS",
 };
+
+export const authConstants = {
+  LOGIN_FORM_SET_JSON: "LOGIN_FORM_SET_JSON",
+};
