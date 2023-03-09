@@ -3,7 +3,9 @@ import { loginFormJSON } from "../../FormGenrate";
 import DynamicForm from "../../components/DynamicForm";
 import { useDispatch } from "react-redux";
 import { setProductFormJSONAction } from "../../strore/actions/user.action";
+import logo from "../../assets/images/mainlogoo.png";
 
+import "./style.css";
 const AuthForms = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [formDataJSON, setFormDataJSON] = useState(loginFormJSON);
@@ -17,7 +19,7 @@ const AuthForms = () => {
   return (
     <div className="login bg-chalchitram">
       <div className="login__container">
-        {/* <img src={logo} alt="" /> */}
+        <img src={logo} alt="test" />
         <DynamicForm formData={formDataJSON} isReRender={isLogin} />
         <div style={{ color: "black" }}>
           Not yet member?

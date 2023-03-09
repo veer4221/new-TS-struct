@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 // import FormComponents from "./FormComponents";
 // import {
 //   submitLoginFunction,
@@ -49,6 +51,7 @@ const DynamicForm = ({ formData, isReRender }: DynamicFormProps) => {
   }, [isReRender]);
   return (
     <div className="container-fluid">
+      <ToastContainer />
       <Formik
         enableReinitialize
         initialValues={Object.assign({}, ...formData?.Fields.map((x) => ({ [x.name]: x.initValue })))}
